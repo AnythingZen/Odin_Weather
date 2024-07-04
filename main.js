@@ -12,7 +12,7 @@ weatherForm.addEventListener('submit', async (event) => {
     if (country) {
         try {
             const weatherData = await getWeatherData(country);
-            displayWeatherData(weatherData, updateTemperature);
+            displayWeatherData(weatherData);
         }
         catch(error) {
             console.log(error);
@@ -37,7 +37,7 @@ async function getWeatherData(country) {
     return await response.json();
 }
 
-function displayWeatherData(weatherData, updateTemperature) {
+function displayWeatherData(weatherData) {
     card.textContent = '';
     card.style.display = 'flex';
 
